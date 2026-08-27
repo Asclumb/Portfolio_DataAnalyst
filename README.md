@@ -3,7 +3,7 @@ Computational notebooks demonstrating statistical modeling, machine learning cla
 
 ---
 
-## [Financial Behavior Classification using XGBoost](https://colab.research.google.com/drive/1TsUnKwVKeduWpB0iswYQYgVw1RNUuChp?usp=sharing)
+## 💸[Financial Behavior Classification using XGBoost](https://colab.research.google.com/drive/1TsUnKwVKeduWpB0iswYQYgVw1RNUuChp?usp=sharing)
 *Predicting Financial Profiles from Spending Patterns Using Behavioral Ratios*
 
 This notebook builds a machine learning classifier that predicts financial profiles (Hemat / Normal / Boros) from behavioral spending ratios rather than raw income. Two people earning the same salary can end up with completely different financial profiles — disiplin, not salary, drives the outcome. The pipeline includes data preprocessing, feature engineering (Savings Rate, Wants Ratio, Needs Ratio), hyperparameter tuning via GridSearchCV, and evaluation via confusion matrix and classification metrics. The final tuned XGBoost model achieves >85% accuracy on unseen data, with key insights visualized through bar charts, scatter plots (Wants vs Savings), and feature importance rankings.
@@ -19,7 +19,7 @@ This notebook builds a machine learning classifier that predicts financial profi
 
 ---
 
-## [Estimating Value at Risk for ANTM Stock Using Monte Carlo Simulation With Modified Distribution Student's T](https://colab.research.google.com/drive/18FZXWhEbTe6_ZkHaTLixR_wlVdp8JXXw?usp=sharing)
+## ♻️[Estimating Value at Risk for ANTM Stock Using Monte Carlo Simulation With Modified Distribution Student's T](https://colab.research.google.com/drive/18FZXWhEbTe6_ZkHaTLixR_wlVdp8JXXw?usp=sharing)
 *Validating Fat-Tailed Distributions and Running Geometric Brownian Motion Simulations with Student's t Shocks*
 
 This notebook is the computational appendix to an undergraduate thesis on quantitative risk management. It estimates Value at Risk (VaR) for Indonesian mining stock ANTM using a Monte Carlo simulation engine powered by Student's t distribution instead of the standard Normal assumption. The analysis uncovers that ANTM's daily log-returns exhibit significant leptokurtosis (fat tails), which classical Kolmogorov-Smirnov tests confirm: Student's t is the best-fitting distribution over Normal and LogNormal alternatives. A GBM simulation with 10,000 paths and Student's t shocks then estimates VaR across four investment horizons (1 day, 1 month, 2 months, 3 months), showing how tail risk compounds over time. Includes manual walkthroughs of the GBM formula, Q-Q plots validating the distributional fit, and sensitivity analysis comparing Student's t VaR against a Normal-shock baseline.
@@ -40,4 +40,3 @@ This notebook is the computational appendix to an undergraduate thesis on quanti
 ## 📈 Author
 
 **Fachlevi Asclumb** — Statistics graduate (2026), Institut Teknologi Kalimantan  
-NIM: 1622102
