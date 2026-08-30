@@ -3,7 +3,7 @@ Computational notebooks demonstrating statistical modeling, machine learning cla
 
 ---
 
-## 💸[Financial Behavior Classification using XGBoost](https://colab.research.google.com/drive/1TsUnKwVKeduWpB0iswYQYgVw1RNUuChp?usp=sharing)
+### 💸[Financial Behavior Classification using XGBoost](https://colab.research.google.com/drive/1TsUnKwVKeduWpB0iswYQYgVw1RNUuChp?usp=sharing)
 *Predicting Financial Profiles from Spending Patterns Using Behavioral Ratios*
 
 This notebook builds a machine learning classifier that predicts financial profiles (Hemat / Normal / Boros) from behavioral spending ratios rather than raw income. Two people earning the same salary can end up with completely different financial profiles — disiplin, not salary, drives the outcome. The pipeline includes data preprocessing, feature engineering (Savings Rate, Wants Ratio, Needs Ratio), hyperparameter tuning via GridSearchCV, and evaluation via confusion matrix and classification metrics. The final tuned XGBoost model achieves >85% accuracy on unseen data, with key insights visualized through bar charts, scatter plots (Wants vs Savings), and feature importance rankings.
@@ -19,7 +19,7 @@ This notebook builds a machine learning classifier that predicts financial profi
 
 ---
 
-## ♻️[Estimating Value at Risk for ANTM Stock Using Monte Carlo Simulation With Modified Distribution Student's T](https://colab.research.google.com/drive/18FZXWhEbTe6_ZkHaTLixR_wlVdp8JXXw?usp=sharing)
+### ♻️[Estimating Value at Risk for ANTM Stock Using Monte Carlo Simulation With Modified Distribution Student's T](https://colab.research.google.com/drive/18FZXWhEbTe6_ZkHaTLixR_wlVdp8JXXw?usp=sharing)
 *Validating Fat-Tailed Distributions and Running Geometric Brownian Motion Simulations with Student's t Shocks*
 
 This notebook is the computational appendix to an undergraduate thesis on quantitative risk management. It estimates Value at Risk (VaR) for Indonesian mining stock ANTM using a Monte Carlo simulation engine powered by Student's t distribution instead of the standard Normal assumption. The analysis uncovers that ANTM's daily log-returns exhibit significant leptokurtosis (fat tails), which classical Kolmogorov-Smirnov tests confirm: Student's t is the best-fitting distribution over Normal and LogNormal alternatives. A GBM simulation with 10,000 paths and Student's t shocks then estimates VaR across four investment horizons (1 day, 1 month, 2 months, 3 months), showing how tail risk compounds over time. Includes manual walkthroughs of the GBM formula, Q-Q plots validating the distributional fit, and sensitivity analysis comparing Student's t VaR against a Normal-shock baseline.
@@ -34,9 +34,24 @@ This notebook is the computational appendix to an undergraduate thesis on quanti
 
 **Reproducibility & Generalization:** The Monte Carlo engine is fully stock-agnostic — simply change the `TICKER`, `START_DATE`, and `END_DATE` variables in Section 1, and the entire pipeline (log-returns, distribution testing, MLE, simulation, VaR) runs unchanged on any other stock listed on Yahoo Finance. All random seeds are locked (16221026) for full reproducibility.
 
-
 ---
-
+ 
+### 🧙[Character Network Analysis: Harry Potter Series](https://www.kaggle.com/code/leviasc/analyze-main-character-on-series-harry-potter-s)
+*Extracting Social Dynamics from Literary Text Using Named Entity Recognition and Graph Theory*
+ 
+This notebook applies Natural Language Processing and graph theory to extract and visualize the social network of characters across all seven Harry Potter novels. Using spaCy's Named Entity Recognition (NER) model to automatically identify person mentions and co-occurrence patterns, the analysis builds a weighted graph where nodes are characters and edges represent social interactions (two characters mentioned in the same sentence). The pipeline processes all 7 books (350k+ words), disambiguates character aliases, and computes three centrality metrics — degree (social connectivity), closeness (network accessibility), and betweenness (information brokerage) — to rank characters by structural importance. Key findings reveal how secondary characters like Severus Snape and Albus Dumbledore surge in betweenness during climactic books, how Harry Potter maintains consistent degree centrality, and how the overall network complexity escalates across the series. Visualizations include spring-layout graphs (node size = weighted degree, color highlights for protagonists), heatmaps tracking centrality evolution book-by-book, and aggregated bar charts naming the most indispensable characters across the full series.
+ 
+**Key Tools & Libraries:**
+> - **spaCy** for Named Entity Recognition (NER) extracting person mentions and displaCy for inline entity visualization;
+> - **NetworkX** for building, analyzing, and computing graph metrics (degree, closeness, betweenness centrality);
+> - **pandas & numpy** for tabular aggregation of centrality scores across all books and characters;
+> - **matplotlib** for publication-ready network visualizations (spring layout graphs, heatmaps, bar charts with color gradients);
+> - **NLTK** for tokenization and text processing;
+> - **Kaggle datasets** for source text (7 Harry Potter novels) and character reference CSV for validation.
+ 
+**Reproducibility & Generalization:** The full pipeline is generalizable to any literary text corpus or character-centric narrative — simply provide a raw text file and a reference CSV of valid character names, and the NLP/graph workflow runs unchanged. The alias mapping and entity filtering functions are modular and reusable across different book series or fictional universes.
+ 
+---
 ## 📈 Author
 
 **Fachlevi Asclumb** — Statistics graduate (2026), Institut Teknologi Kalimantan  
