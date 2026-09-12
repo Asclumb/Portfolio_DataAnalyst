@@ -1,0 +1,19 @@
+# Core Scraping & Browser Automation
+selenium>=4.15.0
+webdriver-manager>=4.0.0
+
+# Data Processing & Storage
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+
+# Natural Language Processing & Sentiment Analysis
+nltk>=3.8.1
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+wordcloud>=1.9.0
+
+# Environment Management
+python-dotenv>=1.0.0
