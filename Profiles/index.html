@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fachlevi Asclumb — Data Analyst Portfolio</title>
+  <meta name="description"
+    content="Portfolio Fachlevi Asclumb, Data Analyst specializing in Machine Learning, NLP, and Quantitative Risk Analysis." />
+
+  <!-- PENTING: Ini memastikan semua link dan gambar bekerja di subfolder GitHub Pages -->
+  <base href="/Portfolio-Dataanalyst/" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' },
+            accent: { 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ===== SCROLL PROGRESS BAR ===== */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      z-index: 9999;
+      background: linear-gradient(90deg, #6366f1, #06b6d4);
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== CUSTOM SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    .dark ::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f46e5;
+    }
+
+    /* ===== GLASSMORPHISM CARD ===== */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .dark .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ===== PROJECT IMAGE PLACEHOLDER ===== */
+    .img-placeholder {
+      background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .dark .img-placeholder {
+      background: linear-gradient(135deg, #312e81 0%, #164e63 100%);
+    }
+
+    /* ===== SKILL BAR ANIMATION ===== */
+    .skill-bar-fill {
+      width: 0%;
+      transition: width 1.2s ease-in-out;
+    }
+
+    .skill-bar-fill.animated {
+      width: var(--fill);
+    }
+
+    /* ===== HAMBURGER ANIMATION ===== */
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ===== FLOATING ANIMATION ===== */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* ===== GRADIENT TEXT ===== */
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 transition-colors duration-300">
+
+  <div id="scroll-progress"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar"
+    class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-700/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="text-xl font-bold tracking-tight"><span class="gradient-text">FA.</span><span
+            class="dark:text-white">Portfolio</span></a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</a>
+          <a href="#about"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+          <a href="#projects"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Projects</a>
+          <a href="#contact"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+            aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon text-slate-600 dark:hidden"></i><i
+              class="fa-solid fa-sun text-yellow-400 hidden dark:inline"></i>
+          </button>
+        </div>
+        <div class="flex items-center space-x-3 md:hidden">
+          <button id="theme-toggle-mobile"
+            class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+            aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon text-slate-600 dark:hidden"></i><i
+              class="fa-solid fa-sun text-yellow-400 hidden dark:inline"></i>
+          </button>
+          <button id="hamburger-btn" class="hamburger p-2" aria-label="Menu">
+            <span class="bg-slate-700 dark:bg-slate-200"></span><span
+              class="bg-slate-700 dark:bg-slate-200"></span><span class="bg-slate-700 dark:bg-slate-200"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu"
+      class="fixed inset-0 top-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+      <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <a href="#home"
+          class="mobile-link text-2xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</a>
+        <a href="#about"
+          class="mobile-link text-2xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+        <a href="#projects"
+          class="mobile-link text-2xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition">Projects</a>
+        <a href="#contact"
+          class="mobile-link text-2xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <div class="absolute inset-0 -z-10">
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-primary-400/20 dark:bg-primary-600/10 rounded-full blur-3xl animate-float">
+      </div>
+      <div
+        class="absolute bottom-20 right-10 w-96 h-96 bg-accent-400/20 dark:bg-accent-600/10 rounded-full blur-3xl animate-float"
+        style="animation-delay:-2s"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div data-aos="zoom-in" data-aos-duration="800" class="mb-8">
+        <div
+          class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full bg-gradient-to-br from-primary-500 to-accent-500 p-1">
+          <!-- GANTI INI DENGAN FOTO ANDA: <img src="assets/images/profile.jpg" alt="Fachlevi" class="w-full h-full rounded-full object-cover" /> -->
+          <div
+            class="w-full h-full rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-4xl sm:text-5xl font-bold gradient-text">
+            FA</div>
+        </div>
+      </div>
+      <h1 data-aos="fade-up" data-aos-delay="200"
+        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">Halo, saya <span
+          class="gradient-text">Fachlevi</span></h1>
+      <p data-aos="fade-up" data-aos-delay="400"
+        class="text-lg sm:text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-4">Saya
+        menerjemahkan data kompleks menjadi keputusan bisnis yang nyata.</p>
+      <p data-aos="fade-up" data-aos-delay="500"
+        class="text-sm sm:text-base text-slate-500 dark:text-slate-500 max-w-xl mx-auto mb-10">Lulusan Statistika,
+        Institut Teknologi Kalimantan (2026) · Spesialis Machine Learning, NLP, & Risiko Kuantitatif</p>
+      <div data-aos="fade-up" data-aos-delay="600" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#projects"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-500 rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5 transition-all duration-300"><i
+            class="fa-solid fa-rocket mr-2"></i> Lihat Proyek Saya</a>
+        <a href="#contact"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-primary-400 dark:hover:border-primary-500 hover:-translate-y-0.5 transition-all duration-300"><i
+            class="fa-solid fa-paper-plane mr-2"></i> Hubungi Saya</a>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="1000" class="mt-16 animate-bounce">
+        <a href="#about" class="text-slate-400 hover:text-primary-500 transition"><i
+            class="fa-solid fa-chevron-down text-2xl"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & SKILLS -->
+  <section id="about" class="py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Tentang <span class="gradient-text">Saya</span></h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-4 text-slate-800 dark:text-white">Mengubah Data Menjadi Cerita</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Saya adalah lulusan Statistika dari
+            Institut Teknologi Kalimantan dengan passion dalam mengubah data mentah menjadi insight yang actionable.
+            Saya percaya bahwa di balik setiap angka, ada cerita yang menunggu untuk diceritakan.</p>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Dari memprediksi perilaku keuangan
+            menggunakan machine learning, hingga mensimulasikan risiko investasi dengan ribuan skenario — setiap proyek
+            saya dirancang untuk menjawab pertanyaan bisnis nyata.</p>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="px-4 py-2 text-sm font-medium rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300">📊
+              Data Analysis</span>
+            <span
+              class="px-4 py-2 text-sm font-medium rounded-full bg-accent-400/10 dark:bg-accent-900/30 text-accent-600 dark:text-accent-300">🤖
+              Machine Learning</span>
+            <span
+              class="px-4 py-2 text-sm font-medium rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">📉
+              Risk Analysis</span>
+            <span
+              class="px-4 py-2 text-sm font-medium rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300">🔍
+              NLP & Text Mining</span>
+          </div>
+        </div>
+        <div data-aos="fade-left">
+          <h3 class="text-xl font-semibold mb-6 text-slate-800 dark:text-white">Tech Stack</h3>
+          <div class="space-y-5">
+            <div class="skill-item">
+              <div class="flex justify-between mb-1.5"><span class="text-sm font-medium">Python (Pandas, NumPy,
+                  Scikit-Learn)</span><span class="text-xs text-slate-500">95%</span></div>
+              <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-gradient-to-r from-primary-500 to-primary-400 rounded-full"
+                  style="--fill:95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="flex justify-between mb-1.5"><span class="text-sm font-medium">XGBoost & Machine
+                  Learning</span><span class="text-xs text-slate-500">85%</span></div>
+              <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
+                  style="--fill:85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="flex justify-between mb-1.5"><span class="text-sm font-medium">NLP (spaCy, NLTK,
+                  VADER)</span><span class="text-xs text-slate-500">80%</span></div>
+              <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-gradient-to-r from-accent-500 to-emerald-400 rounded-full"
+                  style="--fill:80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="flex justify-between mb-1.5"><span class="text-sm font-medium">Data Visualization (Matplotlib,
+                  Seaborn)</span><span class="text-xs text-slate-500">90%</span></div>
+              <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"
+                  style="--fill:90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="flex justify-between mb-1.5"><span class="text-sm font-medium">Web Scraping
+                  (Selenium)</span><span class="text-xs text-slate-500">75%</span></div>
+              <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-gradient-to-r from-amber-500 to-orange-400 rounded-full"
+                  style="--fill:75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="flex justify-between mb-1.5"><span class="text-sm font-medium">Monte Carlo & Quantitative
+                  Methods</span><span class="text-xs text-slate-500">85%</span></div>
+              <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-gradient-to-r from-rose-500 to-pink-400 rounded-full"
+                  style="--fill:85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 sm:py-28 bg-slate-100/50 dark:bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Proyek <span class="gradient-text">Unggulan</span></h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Setiap proyek dimulai dari pertanyaan bisnis
+          nyata dan dijawab dengan pendekatan data yang rigor.</p>
+        <div class="w-16 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mt-4"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- PROJECT 1 -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <!-- GANTI DENGAN: <img src="assets/images/project-xgboost.png" alt="XGBoost" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /> -->
+            <div class="img-placeholder w-full h-full"><i
+                class="fa-solid fa-chart-bar text-4xl mb-2 opacity-80"></i><span class="text-sm opacity-70">Screenshot:
+                Confusion Matrix / Feature Importance</span></div>
+            <div class="absolute top-3 left-3"><span
+                class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 dark:bg-slate-900/90 text-primary-600 dark:text-primary-400 shadow">Machine
+                Learning</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2">💸 Prediksi Perilaku Keuangan</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 italic">"Memprediksi apakah nasabah akan Hemat,
+              Normal, atau Boros."</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Membangun klasifier yang
+              memprediksi profil keuangan dari kebiasaan belanja. Mencapai <strong
+                class="text-primary-600 dark:text-primary-400">akurasi &gt;85%</strong>.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">XGBoost</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Scikit-Learn</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Pandas</span>
+            </div>
+            <a href="https://github.com/Asclumb/Portfolio_DataAnalyst/tree/main/Financial-Behavior" target="_blank"
+              rel="noopener"
+              class="inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 group/link">Lihat
+              Detail & Kode <i
+                class="fa-solid fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i></a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <div class="img-placeholder w-full h-full"><i
+                class="fa-solid fa-chart-line text-4xl mb-2 opacity-80"></i><span class="text-sm opacity-70">Screenshot:
+                Price Projection Cone / VaR</span></div>
+            <div class="absolute top-3 left-3"><span
+                class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 dark:bg-slate-900/90 text-rose-600 dark:text-rose-400 shadow">Quantitative
+                Risk</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2">📉 Simulasi Risiko Saham ANTM</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 italic">"Menghitung potensi kerugian maksimal
+              (Value at Risk)."</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Mensimulasikan <strong
+                class="text-primary-600 dark:text-primary-400">10.000 skenario</strong> masa depan menggunakan
+              distribusi Student's-t untuk mengantisipasi market crash.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Monte
+                Carlo</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">SciPy</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">yfinance</span>
+            </div>
+            <a href="https://github.com/Asclumb/Portfolio_DataAnalyst/tree/main/Monte-Carlo-ANTM" target="_blank"
+              rel="noopener"
+              class="inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 group/link">Lihat
+              Detail & Kode <i
+                class="fa-solid fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i></a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <div class="img-placeholder w-full h-full"><i
+                class="fa-solid fa-diagram-project text-4xl mb-2 opacity-80"></i><span
+                class="text-sm opacity-70">Screenshot: Network Graph</span></div>
+            <div class="absolute top-3 left-3"><span
+                class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 dark:bg-slate-900/90 text-emerald-600 dark:text-emerald-400 shadow">NLP
+                & Graph</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2">🧙 Analisis Jaringan Harry Potter</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 italic">"Membongkar dinamika sosial dari 7 buku
+              novel menggunakan AI."</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Memproses <strong
+                class="text-primary-600 dark:text-primary-400">350.000+ kata</strong> dengan Named Entity Recognition
+              untuk memetakan tokoh paling berpengaruh.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">spaCy</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">NetworkX</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">NLTK</span>
+            </div>
+            <a href="https://github.com/Asclumb/Portfolio_DataAnalyst/tree/main/Harry-Potter-Network" target="_blank"
+              rel="noopener"
+              class="inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 group/link">Lihat
+              Detail & Kode <i
+                class="fa-solid fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i></a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500"
+          data-aos="fade-up" data-aos-delay="400">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <div class="img-placeholder w-full h-full"><i class="fa-solid fa-cloud text-4xl mb-2 opacity-80"></i><span
+                class="text-sm opacity-70">Screenshot: WordCloud / Sentiment</span></div>
+            <div class="absolute top-3 left-3"><span
+                class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 dark:bg-slate-900/90 text-amber-600 dark:text-amber-400 shadow">Web
+                Scraping & NLP</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2">🐦 Analisis Sentimen Twitter</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 italic">"Memantau opini publik secara real-time
+              dari 5.300+ tweet."</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Membangun pipeline otomatis dari
+              <strong class="text-primary-600 dark:text-primary-400">web scraping</strong> hingga analisis sentimen
+              VADER tanpa API berbayar.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Selenium</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">VADER</span>
+              <span
+                class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">WordCloud</span>
+            </div>
+            <a href="https://github.com/Asclumb/Portfolio_DataAnalyst/tree/main/Twitter-OSINT-Sentiment" target="_blank"
+              rel="noopener"
+              class="inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 group/link">Lihat
+              Detail & Kode <i
+                class="fa-solid fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 sm:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div data-aos="fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Mari <span class="gradient-text">Terhubung</span></h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-10 max-w-lg mx-auto">Punya proyek data yang menantang atau ingin
+          berdiskusi? Saya selalu terbuka untuk peluang baru.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+        <a href="mailto:fachlevi.asclumb@gmail.com"
+          class="glass-card rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group">
+          <div
+            class="w-12 h-12 mx-auto mb-3 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center">
+            <i
+              class="fa-solid fa-envelope text-primary-600 dark:text-primary-400 text-lg group-hover:scale-110 transition-transform"></i>
+          </div>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200">Email</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">fachlevi.asclumb@gmail.com</p>
+        </a>
+        <a href="https://linkedin.com/in/asclumb" target="_blank" rel="noopener"
+          class="glass-card rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group">
+          <div
+            class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+            <i
+              class="fa-brands fa-linkedin-in text-blue-600 dark:text-blue-400 text-lg group-hover:scale-110 transition-transform"></i>
+          </div>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200">LinkedIn</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">/in/asclumb</p>
+        </a>
+        <a href="https://github.com/Asclumb" target="_blank" rel="noopener"
+          class="glass-card rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group">
+          <div
+            class="w-12 h-12 mx-auto mb-3 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+            <i
+              class="fa-brands fa-github text-slate-700 dark:text-slate-300 text-lg group-hover:scale-110 transition-transform"></i>
+          </div>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200">GitHub</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">@Asclumb</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500 dark:text-slate-500">© 2026 Fachlevi Asclumb. Built with <span
+          class="text-red-500">♥</span> using HTML, Tailwind CSS & vanilla JS.</p>
+      <a href="#home"
+        class="text-sm text-slate-500 hover:text-primary-600 dark:hover:text-primary-400 transition flex items-center gap-1"><i
+          class="fa-solid fa-arrow-up text-xs"></i> Back to top</a>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 80 });
+    const html = document.documentElement;
+    const themeBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+    function setTheme(dark) { html.classList.toggle('dark', dark); localStorage.setItem('theme', dark ? 'dark' : 'light'); }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) setTheme(true);
+    themeBtns.forEach(btn => btn && btn.addEventListener('click', () => setTheme(!html.classList.contains('dark'))));
+
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    function toggleMenu() { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('translate-x-full'); mobileMenu.classList.toggle('translate-x-0'); document.body.classList.toggle('overflow-hidden'); }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', () => { if (!mobileMenu.classList.contains('translate-x-full')) toggleMenu(); }));
+
+    const progressBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = docHeight > 0 ? (scrollTop / docHeight) * 100 + '%' : '0%';
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('shadow-md', window.scrollY > 20); });
+
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => bar.classList.add('animated'));
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const skillsContainer = document.querySelector('#about .grid');
+    if (skillsContainer) skillObserver.observe(skillsContainer);
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => { if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id'); });
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary-600', 'dark:text-primary-400', 'font-semibold');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('text-primary-600', 'dark:text-primary-400', 'font-semibold');
+      });
+    });
+  </script>
+</body>
+
+</html>
