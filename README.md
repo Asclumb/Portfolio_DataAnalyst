@@ -36,6 +36,23 @@ This notebook is the computational appendix to an undergraduate thesis on quanti
 
 ---
 
+#### 🧙 [Character Network Analysis: Harry Potter Series](https://www.kaggle.com/code/leviasc/analyze-main-character-on-series-harry-potter-s)
+*Extracting Social Dynamics from Literary Text Using Named Entity Recognition and Graph Theory*
+
+This notebook applies Natural Language Processing and network analysis to extract and visualize social connections among characters across all seven Harry Potter novels. Using spaCy Named Entity Recognition (NER) to automatically identify character mentions and co occurrence patterns, the analysis builds a weighted social network graph where characters are connected based on interactions. The pipeline processes all seven books (over 350,000 words), resolves character nicknames, and calculates centrality scores to discover key influencers, information brokers, and the evolution of character relationships across the series.
+
+**Key Tools & Libraries:**
+> - **spaCy** for Named Entity Recognition (NER) extracting person mentions and displaCy for visual inspection;
+> - **NetworkX** for constructing graphs and computing network metrics such as degree, closeness, and betweenness centrality;
+> - **pandas & numpy** for tabular aggregation and relationship ranking;
+> - **matplotlib** for publication quality network graphs, centrality heatmaps, and comparison bar charts;
+> - **NLTK** for sentence tokenization and text preprocessing;
+> - **Kaggle datasets** for raw book texts and reference character names.
+
+**Reproducibility & Generalization:** The pipeline is fully adaptable to any book series or narrative text. Simply provide a text corpus and a list of character names to run the complete social network analysis.
+
+---
+
 #### 🐦 [Twitter Web Scraping and Public Sentiment Analysis](./Twitter-OSINT-Sentiment/)
 *Collecting 5,300+ Tweets and Analyzing Public Opinions Using Natural Language Processing*
 
