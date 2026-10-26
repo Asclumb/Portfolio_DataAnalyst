@@ -1,0 +1,159 @@
+﻿teks,komponen,bobot,keterangan
+enak bener,leksikon,1.0,ironi kuat
+enak aja,leksikon,0.9,ironi
+enak banget,leksikon,0.9,ironi
+enak ya hidup,leksikon,0.95,ironi eksistensial
+asal manggap,leksikon,1.0,kritik asal bicara
+asal ngomong,leksikon,0.9,kritik asal bicara
+asal bunyi,leksikon,0.9,kritik asal bicara
+asal ada,leksikon,0.85,kritik kualitas asal
+asal jalan,leksikon,0.8,kritik pelaksanaan asal
+agak laen emang,leksikon,0.9,ironi Gen Z MBG
+agak laen,leksikon,0.8,ironi Gen Z
+wah keren,leksikon,0.7,pujian ironi
+wah mantap,leksikon,0.7,pujian ironi
+wah hebat,leksikon,0.75,pujian ironi
+luar biasa sekali,leksikon,0.8,pujian ironi berlebihan
+sungguh luar biasa,leksikon,0.85,pujian ironi berlebihan
+mantap jiwa,leksikon,0.75,pujian ironi
+ya elah,leksikon,0.8,ekspresi kecewa ironis
+kok bisa,leksikon,0.75,heran ironis
+bisa aja,leksikon,0.7,tidak percaya
+gitu deh,leksikon,0.65,pasrah sinis
+mau gimana lagi,leksikon,0.7,pasrah ironis
+percuma,leksikon,0.65,sia-sia
+ternyata malah,leksikon,0.95,kontras harapan-kenyataan MBG
+ternyata cuma,leksikon,0.8,kontras dengan pengurangan
+digadang gadang,leksikon,0.75,harapan berlebihan MBG
+digadang-gadang,leksikon,0.75,harapan berlebihan MBG
+katanya,leksikon,0.65,meragukan klaim
+katanya sih,leksikon,0.7,meragukan + sih
+konon,leksikon,0.65,meragukan
+seolah olah,leksikon,0.65,pura-pura
+pura pura,leksikon,0.75,kemunafikan
+zonk,leksikon,0.9,gagal total
+php banget,leksikon,0.85,harapan palsu
+omdo,leksikon,0.85,omong doang
+omong doang,leksikon,0.85,banyak bicara
+pencitraan,leksikon,0.8,pura-pura baik
+pencitraan doang,leksikon,0.9,pura-pura + doang
+kampanye doang,leksikon,0.9,janji kampanye
+pas kampanye,leksikon,0.8,sinisme kampanye
+janji manis,leksikon,0.85,janji tidak ditepati
+janji palsu,leksikon,0.9,janji bohong
+masuk akal banget,leksikon,0.8,ironi ketidaklogisan
+sangat masuk akal,leksikon,0.85,ironi ketidaklogisan
+logis sekali,leksikon,0.8,ironi logika
+top markotop,leksikon,0.8,pujian ironi lebay
+super sekali,leksikon,0.75,pujian ironi lebay
+selamat deh,leksikon,0.65,ucapan ironi
+bravo,leksikon,0.6,pujian ironi
+acungan jempol,leksikon,0.6,pujian ironi
+gratis katanya,leksikon,0.9,meragukan klaim gratis MBG
+gratis kok bayar,leksikon,1.0,kontradiksi MBG
+gratis tapi tombokin,leksikon,1.0,kontradiksi guru bayar
+gratis tapi harus bayar,leksikon,1.0,kontradiksi MBG
+bergizi katanya,leksikon,0.85,meragukan kualitas MBG
+bergizi padahal,leksikon,0.8,kontras janji bergizi
+seperti biasa,leksikon,0.6,pola berulang sinis
+lagi lagi,leksikon,0.6,pola berulang sinis
+masih aja,leksikon,0.6,pola berulang sinis
+kapan berubah,leksikon,0.7,pertanyaan retoris sinis
+keracunan lagi,leksikon,0.8,pola berulang sinis keracunan
+lagi keracunan,leksikon,0.75,pola keracunan ironis
+sudah biasa,leksikon,0.6,normalisasi kegagalan
+buang buang anggaran,leksikon,0.85,ironi pemborosan
+buang anggaran doang,leksikon,0.9,ironi pemborosan
+triliunan tapi,leksikon,0.85,ironi anggaran besar vs kualitas
+anggaran triliunan,leksikon,0.65,konteks ironi anggaran
+71 triliun tapi,leksikon,0.9,ironi spesifik anggaran MBG
+niceee,leksikon,0.7,ironi pujian Gen Z
+nice banget,leksikon,0.65,ironi pujian
+ok keren,leksikon,0.6,ironi pujian
+keren banget sih,leksikon,0.75,ironi + sih
+bagus banget sih,leksikon,0.7,ironi + sih
+yakin nih,leksikon,0.7,meragukan
+masa sih,leksikon,0.65,meragukan
+serius nih,leksikon,0.65,meragukan serius
+lucu banget,leksikon,0.6,ironi ringan
+lucu juga,leksikon,0.55,ironi ringan
+menarik sekali,leksikon,0.55,ironi pujian
+"(digadang.gadang|dianggap|katanya|konon).{3,60}(ternyata|malah|justru|nyatanya)",pola_regex,0.9,harapan vs kenyataan
+ternyata\s+(malah|justru|bikin|membuat|jadi|cuma),pola_regex,0.85,pembalikan harapan
+"bukannya.{3,50}malah",pola_regex,0.8,pembalikan logis
+"gratis.{0,40}(bayar|diminta|harus\s*membayar|tombokin|iuran|biaya)",pola_regex,0.95,kontradiksi gratis-bayar MBG
+"percuma.{3,60}toh",pola_regex,0.8,kesia-siaan
+"seolah.{3,60}padahal",pola_regex,0.8,penampilan vs realita
+"katanya.{3,60}padahal",pola_regex,0.85,klaim vs fakta
+"harusnya.{3,60}malah",pola_regex,0.75,harapan tidak terpenuhi
+"(bagus|keren|mantap|luar\s*biasa).{3,60}(tapi|tetapi|namun).{3,40}(tidak|gak|ga|kurang|gagal)",pola_regex,0.8,pujian + kontras
+mana\s+\w+.nya,pola_regex,0.65,retoris tanya
+"(sudah|udah).{5,50}(tapi|tetapi).{3,40}(tidak|gak|ga|belum)",pola_regex,0.7,usaha vs hasil
+"(janji|omongan).{3,40}(palsu|bohong|kosong|doang|saja|aja)",pola_regex,0.85,janji palsu
+kampanye\s+(doang|saja|aja|melulu),pola_regex,0.9,sinisme kampanye
+"(pencitraan|show\s*off|pamer).{0,30}(doang|saja|aja)",pola_regex,0.8,pencitraan
+"ironis(nya)?\s*[,:]",pola_regex,0.9,eksplisit ironi
+lucunya\s+adalah,pola_regex,0.85,ironi eksplisit
+"(anak|siswa|murid).{3,60}(keracunan|sakit|lapar|tidak\s*makan|belum\s*makan)",pola_regex,0.85,dampak negatif MBG nyata
+"(menu|makanan|makan).{3,50}(tidak\s*layak|tidak\s*bergizi|basi|kotor|jorok)",pola_regex,0.8,kualitas MBG buruk
+"(anggaran|dana).{3,60}(terbuang|mubazir|sia.sia|habis\s*percuma|bocor)",pola_regex,0.85,pemborosan anggaran
+"(triliun|miliar).{3,50}(percuma|sia.sia|buang|habis)",pola_regex,0.8,ironi anggaran besar
+keracunan\s+(lagi|terus|melulu),pola_regex,0.9,pola keracunan berulang
+"(program|mbg).{3,40}(gagal|berantakan|kacau|bermasalah)",pola_regex,0.8,kritik program gagal
+"\bpadahal\b.{3,80}\bpadahal\b",pola_regex,0.75,double padahal ironi
+"(hanya|cuma|cuman).{3,40}(kata|ngomong|bicara|bilang)",pola_regex,0.75,omdo pattern
+(eh\s+)?ternyata\b,pola_regex,0.55,kejutan ironis
+parahnya\s+(adalah|lagi|nih),pola_regex,0.8,ironi negatif eksplisit
+mirisnya\s+,pola_regex,0.75,ironi menyedihkan
+😂,emoji,1.0,face tears joy — ironi kuat
+🤣,emoji,1.0,rolling laughing — ironi kuat
+😆,emoji,0.8,grinning — ironi
+😅,emoji,0.7,sweat smile — ironi ringan
+😭,emoji,0.7,crying — drama/ironi
+🙄,emoji,0.9,rolling eyes — skeptis
+😒,emoji,0.85,unamused — tidak senang
+🤡,emoji,1.0,clown — mengejek
+💀,emoji,0.75,skull — ironi Gen Z
+😱,emoji,0.6,screaming — kaget ironis
+💩,emoji,0.9,poo — mengejek kualitas
+🤨,emoji,0.8,raised eyebrow — skeptis
+🙃,emoji,0.75,upside down — ironi halus
+😬,emoji,0.65,grimacing — canggung ironis
+😤,emoji,0.7,huffing — jengkel
+🫠,emoji,0.65,melting — lelah ironis
+🤦,emoji,0.8,facepalm — frustrasi
+🤦‍♂️,emoji,0.8,facepalm pria
+🤦‍♀️,emoji,0.8,facepalm wanita
+🤷,emoji,0.6,shrug — tidak peduli
+👏,emoji,0.65,clapping — tepuk tangan ironis
+🥴,emoji,0.65,woozy — bingung ironis
+😑,emoji,0.7,expressionless — tidak berperasaan
+😐,emoji,0.55,neutral — tidak terkesan
+🤥,emoji,0.8,lying face — kebohongan
+😏,emoji,0.7,smirking — senyum sinis
+💔,emoji,0.5,broken heart — kecewa
+🫤,emoji,0.6,dotted — tidak puas
+🧐,emoji,0.5,monocle — terlalu kritis
+👀,emoji,0.45,eyes — memperhatikan
+padahal,konjungsi,0.7,kontras harapan vs kenyataan
+malah,konjungsi,0.8,pembalikan hasil
+justru,konjungsi,0.8,pembalikan logis
+namun,konjungsi,0.4,kontras formal
+tapi,konjungsi,0.3,kontras umum
+tetapi,konjungsi,0.3,kontras formal
+walaupun,konjungsi,0.3,kontras konsesif
+meskipun,konjungsi,0.3,kontras konsesif
+bahkan,konjungsi,0.5,penguatan kontras
+ternyata,konjungsi,0.6,kejutan kontras
+nyatanya,konjungsi,0.7,kenyataan vs harapan
+ironisnya,konjungsi,0.9,eksplisit ironi
+sayangnya,konjungsi,0.5,penyesalan ironis
+anehnya,konjungsi,0.65,keanehan ironis
+lucunya,konjungsi,0.65,ironi halus
+gilanya,konjungsi,0.7,ironi ekstrem
+parahnya,konjungsi,0.75,ironi negatif
+mirisnya,konjungsi,0.75,ironi menyedihkan
+tragisnya,konjungsi,0.75,ironi dramatis
+toh,konjungsi,0.45,kesia-siaan
+bukannya,konjungsi,0.5,negasi kontras
+eh tapi,konjungsi,0.6,kontras mendadak
