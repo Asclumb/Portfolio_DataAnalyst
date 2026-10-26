@@ -69,6 +69,24 @@ This project demonstrates an automated data collection and text analysis pipelin
 
 ---
 
+
+#### 🍱 [Sentiment Analysis of MBG Tweets: Four Methods Compared](./MBG-Sentiment-Analysis/)
+*Comparing Lexicon and Transformer Approaches with a Custom Sarcasm Guard on Indonesian Tweets*
+ 
+This project classifies 1,000 Indonesian tweets about the Free Nutritious Meals (MBG) program as positive, neutral, or negative using VADER, SentiWordNet, InSet, and IndoBERT. Because 82.7% of tweets are negative, accuracy is misleading: predicting every tweet as negative already scores 82.7% accuracy but only 30.2% F1-macro, so F1-macro is the main metric. The lexicon methods reach only about 19% to 37% F1-macro because most negative tweets criticize implicitly, without explicit negative words. A custom rule-based Sarcasm Guard combines a sarcasm lexicon, contrastive patterns, irony emoji, and contrastive conjunctions to flip the polarity of ironic tweets, although it flagged only 8 tweets in this dataset.
+ 
+**Key Tools & Libraries:**
+> - **Hugging Face Transformers** for IndoBERT based sentiment classification;
+> - **VADER & NLTK (SentiWordNet)** for lexicon based sentiment scoring, extended with custom Indonesian dictionaries;
+> - **scikit-learn** for accuracy, F1-macro, precision, recall, and confusion matrices;
+> - **pandas, numpy, regex & emoji** for text cleaning, slang normalization, and emoji signal extraction;
+> - **matplotlib, seaborn & WordCloud** for score distributions, confusion matrices, and word clouds;
+> - **Jupyter Notebooks** with bilingual (English and Indonesian) explanations.
+ 
+**Reproducibility:** The slang, sarcasm, and InSet dictionaries are plain CSV files that can be edited without touching the code. IndoBERT inference is best run on a GPU (for example Google Colab).
+ 
+---
+
 ## 📈 Author
 
 **Fachlevi Asclumb** — Statistics graduate (2026), Institut Teknologi Kalimantan  
